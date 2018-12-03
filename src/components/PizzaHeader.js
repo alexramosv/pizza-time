@@ -1,6 +1,15 @@
 import React from "react";
 
-const PizzaHeader = () => <h1>Pizza Header</h1>;
+const PizzaHeader = () => (
+  <header className="pizza-text">
+    <h1>
+      <span role="img" aria-labelledby="pizza-portion">
+        🍕
+      </span>{" "}
+      It's Pizza Time!
+    </h1>
+  </header>
+);
 
 export default PizzaHeader;
 
