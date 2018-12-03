@@ -1,3 +1,9 @@
+import React from "react";
+
+const PizzaTotal = () => <h1>Pizza Total</h1>;
+
+export default PizzaTotal;
+
 /* TODO: Create the PizzaTotal Component consisting of:
   - A `div` with a class `score`
     - An `span` with class `label`
