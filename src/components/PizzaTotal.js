@@ -1,7 +1,25 @@
 import React from "react";
+import { formatPrice } from "../helpers";
 
-const PizzaTotal = () => <h1>Pizza Total</h1>;
+/*const PizzaTotal = () => <h1>Pizza Total</h1>;*/
+class PizzaTotal extends React.Component {
+  sumPizzaIngredients = ingredients =>
+    Object.keys(ingredients)
+      .filter(ingredientKey => ingredients[ingredientKey].selected)
+      .map(ingredientKey => ingredients[ingredientKey].cash)
+      .reduce((total, currentPrice) => total + currentPrice, 0);
 
+  render() {
+    return (
+      <div className="score">
+        <span className="label">Total</span>
+        <span className="value">
+          {formatPrice(this.sumPizzaIngredients(this.props.ingredients))}
+        </span>{" "}
+      </div>
+    );
+  }
+}
 export default PizzaTotal;
 
 /* TODO: Create the PizzaTotal Component consisting of:
